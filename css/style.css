@@ -1,0 +1,86 @@
+body {
+	background-color: gray;
+}
+.container {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	height: 100px;
+    padding-bottom: 50px;
+    background-image:url(../images/pug_header.png);
+    	border: groove;
+}
+#geeMail {
+	background-color: black;
+	height:12%;
+	color: white;
+	font-weight: bold;
+	border: groove;
+}
+.sender {
+	margin: 20px;
+	color:blue;
+	 font-family: "Times New Roman", Times, serif;
+	 font-size: 125%;
+}
+.date {
+	font-size: 85%;
+	float: right;
+	padding-right: 10px;
+}
+.subject {
+	margin: 20px;
+}
+.body {
+	margin: 20px;
+}
+.senderNew {
+	margin: 20px;
+	color:blue;
+	 font-family: "Times New Roman", Times, serif;
+	 font-size: 125%;
+
+}
+.dateNew {
+	font-size: 85%;
+	float: right;
+	padding-right: 10px;
+}
+.subjectNew {
+	margin: 20px;
+}
+.bodyNew {
+	margin: 20px;
+}
+#content {
+	background-color: #87CEFA;
+	margin-left: 145px;
+	padding-bottom: 50000;
+}
+#nav {
+	display: inline-block;
+	float: left;
+	width:140px;
+	background-color: white;
+	padding-bottom: 50000;
+	background-image:url(../images/pug_nav.jpg);
+		border: groove;
+}
+li {
+	font-size: 20px;
+	display: inline;
+    float: left;
+}
+
+#links {
+	padding: 8px;
+}
+#inbox {
+	padding: 8px;
+}
+#contentBorder {
+	border: groove;
+}

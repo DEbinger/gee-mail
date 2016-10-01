@@ -3,16 +3,107 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+      window.onload = function(){	
+    		for (var i = 0; i < geemails.length; i++){
+		    var dateBox = document.createElement('div');
+  			dateBox.className = "date";
+  			dateBox.innerHTML = geemails[i].date;
+  			contentBorder.appendChild(dateBox);
+
+        var subjectBox = document.createElement('div');
+        subjectBox.className = "subject";
+        subjectBox.innerHTML = geemails[i].subject;
+        contentBorder.appendChild(subjectBox);
+
+        var senderBox = document.createElement('div');
+        senderBox.className = "sender";
+        senderBox.innerHTML = geemails[i].sender;
+        contentBorder.appendChild(senderBox);
+
+  			var bodyBox = document.createElement('div');
+  			bodyBox.className = "body";
+  			bodyBox.innerHTML = geemails[i].body;
+  			contentBorder.appendChild(bodyBox);
+        }  
+        function createNewEmail(){
+        var newEmail = getNewMessage();
+        var newDateBox = document.createElement('div');
+        newDateBox.className = "dateNew";
+        newDateBox.innerHTML = newEmail.date;
+        contentBorder.appendChild(newDateBox);
+
+        var newSubjectBox = document.createElement('div');
+        newSubjectBox.className = "subjectNew";
+        newSubjectBox.innerHTML = newEmail.subject;
+        contentBorder.appendChild(newSubjectBox);
+
+        var newSenderBox = document.createElement('div');
+        newSenderBox.className = "senderNew";
+        newSenderBox.innerHTML = newEmail.sender;
+        contentBorder.appendChild(newSenderBox);
+
+        var newBodyBox = document.createElement('div');
+        newBodyBox.className = "bodyNew";
+        newBodyBox.innerHTML = newEmail.body;
+        contentBorder.appendChild(newBodyBox);
+}
+        setInterval(createNewEmail, 3000);
         
-      };
+ 
+    		var bodyList = document.getElementsByClassName('content');
+			  for(var j = 0; j<bodyList.length; j++){
+  			bodyList[j].addEventListener('click', toggleBody);
+      }	
+
+        function toggleBody(){
+    		var bodyHide = this.querySelectorAll('.contentBorder')[0];
+    		console.log(this);
+    	 	  if(bodyHide.style.display === 'none'){
+     	  	bodyHide.style.display = 'block';
+    			}else{
+      		bodyHide.style.display = 'none';
+    }
+  
+
+ }
+};
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+  	<div class="container" id="main">
+      <div id="header">
+
+      </div>
+      <div id = "geeMail">
+        <ul>
+          <li id="inbox">COMPOSE</li>
+          <li id="inbox">INBOX</li>
+          <li id="links">WHAT'S NEW</li>
+          <li id="links">CONTACTS</li>
+          <li id="links">OPTIONS</li>
+        </ul>  
+			</div>
+      <div>
+        <div id="nav">
+        
+        </div>
+  			<div id="content">
+          <div id="contentBorder">
+<!--             <div id="date">
+
+</div>
+<div id="sender">
+
+</div>
+<div id="body">
+
+</div>
+<div id="subject">
+
+</div> -->
+          </div>
+    		</div>			
+      </div>	
+    </div>
 	</body>
 </html>
