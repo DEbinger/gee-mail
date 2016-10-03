@@ -2,26 +2,28 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
     <script>
       window.onload = function(){	
     		for (var i = 0; i < geemails.length; i++){
 		    var dateBox = document.createElement('div');
-  			dateBox.className = "date";
+  			dateBox.className = "dateNew";
   			dateBox.innerHTML = geemails[i].date;
   			contentBorder.appendChild(dateBox);
 
         var subjectBox = document.createElement('div');
-        subjectBox.className = "subject";
+        subjectBox.className = "subjectNew";
         subjectBox.innerHTML = geemails[i].subject;
         contentBorder.appendChild(subjectBox);
 
         var senderBox = document.createElement('div');
-        senderBox.className = "sender";
+        senderBox.className = "senderNew";
         senderBox.innerHTML = geemails[i].sender;
         contentBorder.appendChild(senderBox);
 
   			var bodyBox = document.createElement('div');
-  			bodyBox.className = "body";
+  			bodyBox.className = "bodyNew";
   			bodyBox.innerHTML = geemails[i].body;
   			contentBorder.appendChild(bodyBox);
         }  
@@ -48,59 +50,51 @@
         contentBorder.appendChild(newBodyBox);
 }
         setInterval(createNewEmail, 3000);
-        
- 
-    		var bodyList = document.getElementsByClassName('content');
-			  for(var j = 0; j<bodyList.length; j++){
-  			bodyList[j].addEventListener('click', toggleBody);
-      }	
+var showEmail = document.getElementById('content');showEmail.addEventListener("click", showNewEmail);
 
-        function toggleBody(){
-    		var bodyHide = this.querySelectorAll('.contentBorder')[0];
-    		console.log(this);
-    	 	  if(bodyHide.style.display === 'none'){
-     	  	bodyHide.style.display = 'block';
-    			}else{
-      		bodyHide.style.display = 'none';
-    }
-  
-
- }
-};
+function showNewEmail(){
+  var revealEmail = document.getElementById("contentBorder");
+  if(revealEmail.style.display === "block"){
+    revealEmail.style.display = "none";
+  }else{
+    revealEmail.style.display = "block";
+  }
+}
+        };
     </script>
 	</head>
 	<body>
   	<div class="container" id="main">
-      <div id="header">
+      <div id="header"><h2><div class="titleTop">PUG MAIL</div></h2>
 
       </div>
-      <div id = "geeMail">
-        <ul>
-          <li id="inbox">COMPOSE</li>
-          <li id="inbox">INBOX</li>
-          <li id="links">WHAT'S NEW</li>
-          <li id="links">CONTACTS</li>
-          <li id="links">OPTIONS</li>
-        </ul>  
-			</div>
+<!--       <div id = "geeMail">
+  
+      </div> -->
       <div>
-        <div id="nav">
-        
+        <div id="nav"
+        style="height:575px">
+          <ul class="inbox">
+            <button><li>COMPOSE</li></button><br>
+            <br><button><li>INBOX</li></button><br>
+            <br><button><li>CONTACTS</li></button><br>
+            <br><button><li>OPTIONS</li></button><br>
+            <br><button><li>WHAT'S NEW</li></button><br>
+          </ul>
         </div>
-  			<div id="content">
-          <div id="contentBorder">
-<!--             <div id="date">
-
-</div>
-<div id="sender">
-
-</div>
-<div id="body">
-
-</div>
-<div id="subject">
-
-</div> -->
+  			<div id="content" style="overflow: scroll;height: 575px; overflow-x:hidden;">
+          <div id="contentBorder"><div id="dateNew">
+          
+            </div>
+            <div id="senderNew">
+          
+            </div>
+            <div id="bodyNew">
+          
+            </div>
+            <div id="subjectNew">
+          
+            </div>
           </div>
     		</div>			
       </div>	
