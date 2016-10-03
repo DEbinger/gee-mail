@@ -1,22 +1,32 @@
 body {
 	background-color: gray;
 }
+h2 {
+	position: absolute;
+	top: -40px; 
+   	left: 0; 
+   	width: 100%;
+   	color: red; 
+   	font-family: 'Indie Flower', cursive;
+}
+
 .container {
-	width: 95%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #header {
-	height: 100px;
-    padding-bottom: 50px;
+	height: 10px;
     background-image:url(../images/pug_header.png);
-    	border: groove;
+    border: groove;
+    text-align: center;
+	font-size: 60px;
+	padding: 70px ;
 }
 #geeMail {
 	background-color: black;
 	height:12%;
-	color: white;
 	font-weight: bold;
 	border: groove;
 }
@@ -33,6 +43,7 @@ body {
 }
 .subject {
 	margin: 20px;
+
 }
 .body {
 	margin: 20px;
@@ -47,40 +58,47 @@ body {
 .dateNew {
 	font-size: 85%;
 	float: right;
-	padding-right: 10px;
+	padding-right: 30px;
 }
 .subjectNew {
 	margin: 20px;
 }
 .bodyNew {
 	margin: 20px;
+	padding-bottom: 5px;
+
 }
-#content {
-	background-color: #87CEFA;
-	margin-left: 145px;
-	padding-bottom: 50000;
-}
+
 #nav {
-	display: inline-block;
 	float: left;
 	width:140px;
 	background-color: white;
-	padding-bottom: 50000;
 	background-image:url(../images/pug_nav.jpg);
-		border: groove;
+	border: groove;
 }
+
+#content {
+	border: groove;
+	background-color: #87CEFA;
+	margin-left: 145px;
+	display: block;
+}
+.contentBorder {
+	border: 3px;
+	display: none;
+}
+
 li {
-	font-size: 20px;
-	display: inline;
-    float: left;
+	object-position: all;
+	font-size: 15px;
+	display: inline-block;
+	color:red;
+	text-shadow:0em 0.05em 0 rgba(0,0,0,0.30);font-family: 'Lalezar', cursive;
 }
 
 #links {
 	padding: 8px;
 }
-#inbox {
-	padding: 8px;
-}
-#contentBorder {
-	border: groove;
+.inbox {
+	
 }
