@@ -7,61 +7,85 @@
     <script>
       window.onload = function(){	
     		for (var i = 0; i < geemails.length; i++){
+
+        var boxForEmail = document.createElement('div');
+        boxForEmail.className = "outsideBox";
+        emailHere.appendChild(boxForEmail);
+        boxForEmail.addEventListener('click',showNewEmail);
+
 		    var dateBox = document.createElement('div');
-  			dateBox.className = "dateNew";
+  			dateBox.className = "date";
   			dateBox.innerHTML = geemails[i].date;
-  			emailHere.appendChild(dateBox);
+  			boxForEmail.appendChild(dateBox);
 
         var subjectBox = document.createElement('div');
-        subjectBox.className = "subjectNew";
+        subjectBox.className = "subject";
         subjectBox.innerHTML = geemails[i].subject;
-        emailHere.appendChild(subjectBox);
+        boxForEmail.appendChild(subjectBox);
 
         var senderBox = document.createElement('div');
-        senderBox.className = "senderNew";
+        senderBox.className = "sender";
         senderBox.innerHTML = geemails[i].sender;
-        emailHere.appendChild(senderBox);
+        boxForEmail.appendChild(senderBox);
 
         var bodyBox = document.createElement('div');
-        bodyBox.className = "bodyNew";
+        bodyBox.className = "body";
         bodyBox.innerHTML = geemails[i].body;
-        emailHere.appendChild(bodyBox);
-}        
-        function createNewEmail(){
-        var newEmail = getNewMessage();
+        boxForEmail.appendChild(bodyBox);
+        bodyBox.style.display = "none";
+}
+        mailCounter.innerHTML = geemails.length;
+
+        function newEmail(){
+        geemails.length++;
+        mailCounter.innerHTML = geemails.length;
+
+        var boxForEmail = document.createElement('div');
+        boxForEmail.className = "outsideBox";
+        contentBorder.appendChild(boxForEmail);
+        boxForEmail.addEventListener('click',showNewEmail);
 
         var newDateBox = document.createElement('div');
-        newDateBox.className = "dateNew";
-        newDateBox.innerHTML = newEmail.date;
-        emailHere.appendChild(newDateBox);
+        newDateBox.className = "date";
+        newDateBox.innerHTML = getNewMessage().date;
+        boxForEmail.appendChild(newDateBox);
 
         var newSubjectBox = document.createElement('div');
-        newSubjectBox.className = "subjectNew";
-        newSubjectBox.innerHTML = newEmail.subject;
-        emailHere.appendChild(newSubjectBox);
+        newSubjectBox.className = "subject";
+        newSubjectBox.innerHTML = getNewMessage().subject;
+        boxForEmail.appendChild(newSubjectBox);
 
         var newSenderBox = document.createElement('div');
-        newSenderBox.className = "senderNew";
-        newSenderBox.innerHTML = newEmail.sender;
-        emailHere.appendChild(newSenderBox);
+        newSenderBox.className = "sender";
+        newSenderBox.innerHTML = getNewMessage().sender;
+        boxForEmail.appendChild(newSenderBox);
 
         var newBodyBox = document.createElement('div');
-        newBodyBox.className = "bodyNew";
-        newBodyBox.innerHTML = newEmail.body;
-        emailHere.appendChild(newBodyBox);
-}
-        setInterval(createNewEmail, 3000);
-var showEmail = document.getElementById('content');showEmail.addEventListener("click", showNewEmail);
+        newBodyBox.className = "body";
+        newBodyBox.innerHTML = getNewMessage().body;
+        boxForEmail.appendChild(newBodyBox);
+        newBodyBox.style.display = "none";
 
-function showNewEmail(){
-  var revealEmail = document.getElementById("emailHere");
-  if(revealEmail.style.display === "block"){
-    revealEmail.style.display = "none";
-  }else{
-    revealEmail.style.display = "block";
-  }
+        emailHere.insertBefore(boxForEmail, emailHere.childNodes[0]);
+
 }
-        };
+        setInterval(newEmail, 3000);
+
+        var showEmail = document.getElementById('outsideBox');
+
+
+        function showNewEmail(){
+          var revealEmail = this.querySelectorAll(".body")[0];
+          if(revealEmail.style.display === 'none'){
+            revealEmail.style.display = 'block';
+          }
+          else{
+            revealEmail.style.display = 'none';
+          }
+}
+
+};
+
     </script>
 	</head>
 	<body>
@@ -76,28 +100,43 @@ function showNewEmail(){
         <div id="nav"
         style="height:575px">
           <ul class="inbox">
-            <button><li>COMPOSE</li></button><br>
-            <br><button><li>INBOX</li></button><br>
-            <br><button><li>CONTACTS</li></button><br>
-            <br><button><li>OPTIONS</li></button><br>
-            <br><button><li>WHAT'S NEW</li></button><br>
+              <button><li>COMPOSE</li></button><br><br>
+              <br><button><li>CONTACTS</li></button><br><br>
+              <br><button><li>OPTIONS</li></button><br><br>
+              <br><button a href="#" class="btn" ><li>INBOX</li></button>
           </ul>
+          <button><div id="mailCounter"></button>
+
+          </div>
         </div>
   			<div id="content" style="overflow: scroll;height: 575px; overflow-x:hidden;">
-          <div id="contentBorder">
-            <div id="emailHere">
-                  <div id="dateNew">
+          <div id="emailHere">
+            <div id="date">
 
-                  </div>
-                  <div id="senderNew">
+            </div>
+            <div id="sender">
                 
-                  </div>
-                  <div id="bodyNew">
+            </div>
+            <div id="body">
                 
-                  </div>
-                  <div id="subjectNew">
+            </div>
+            <div id="subject">
+
+            </div>
+           </div>  
+          <div id="contentBorder">
+            
+            <div id="dateNew">
+            
+            </div>
+            <div id="senderNew">
                 
-                  </div>
+            </div>
+            <div id="bodyNew">
+                
+            </div>
+            <div id="subjectNew">
+                
             </div>
           </div>
     		</div>			

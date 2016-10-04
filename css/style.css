@@ -24,29 +24,32 @@ h2 {
 	font-size: 60px;
 	padding: 70px ;
 }
-#geeMail {
+/* #geeMail {
 	background-color: black;
 	height:12%;
 	font-weight: bold;
 	border: groove;
-}
+} */
 .sender {
 	margin: 20px;
 	color:blue;
 	 font-family: "Times New Roman", Times, serif;
-	 font-size: 125%;
+	 font-size: 105%;
 }
 .date {
-	font-size: 85%;
+	font-size: 90%;
+	font-weight: bold;
 	float: right;
 	padding-right: 10px;
 }
 .subject {
+	font-family: "Verdana";
 	margin: 20px;
-
+	font-size: 110%;
 }
 .body {
 	margin: 20px;
+	font-family: "arial";
 }
 .senderNew {
 	margin: 20px;
@@ -56,7 +59,7 @@ h2 {
 
 }
 .dateNew {
-	font-size: 85%;
+	font-size: 105%;
 	float: right;
 	padding-right: 30px;
 }
@@ -66,7 +69,7 @@ h2 {
 .bodyNew {
 	margin: 20px;
 	padding-bottom: 5px;
-
+	color: red;
 }
 
 #nav {
@@ -83,26 +86,24 @@ h2 {
 	margin-left: 145px;
 	display: block;
 }
-.contentBorder {
-	border: 3px;
-	display: none;
-	border-style: dotted;
-}
-.emailHere {
-	border-style: solid;
-}
+
+.outsideBox {
+	border:2px solid gray;}
 
 li {
-	object-position: all;
-	font-size: 15px;
+	font-size: 17px;
 	display: inline-block;
 	color:red;
 	text-shadow:0em 0.05em 0 rgba(0,0,0,0.30);font-family: 'Lalezar', cursive;
 }
-
-#links {
-	padding: 8px;
+#mailCounter{
+	position: absolute;
+	left: 148px;
+	bottom: 312px;
+	font-size: 20px;
+	color:red;
+	text-shadow:0em 0.05em 0 rgba(0,0,0,0.30);font-family: 'Lalezar', cursive;
 }
-.inbox {
-	
+.btn {
+	padding-bottom: 15px;
 }
